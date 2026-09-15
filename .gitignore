@@ -1,0 +1,6 @@
+# 编译产物不上传
+*.exe
+output/
+
+# VSCode 本地配置
+.vscode/
