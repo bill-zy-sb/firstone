@@ -5,14 +5,14 @@ private:
     int data;
     Linknode* next;
 public:
-    // ¹¹Ôìº¯Êý
+    // æž„é€ å‡½æ•°
     Linknode(int value = 0) : data(value), next(nullptr) {
-        cout << "Linknode constructor called" << endl;//ÌáÊ¾
+        cout << "Linknode constructor called" << endl;//æç¤º
     }
 
-    // Îö¹¹º¯Êý
+    // æžæž„å‡½æ•°
     ~Linknode() {
-        cout << "Linknode destructor called" << endl;//ÌáÊ¾
+        cout << "Linknode destructor called" << endl;//æç¤º
     }
 
     int GetData() {
@@ -26,20 +26,19 @@ public:
     void SetNext(Linknode* ptr) {
         next = ptr;
     }
-//´òÓ¡½Úµã
+//æ‰“å°èŠ‚ç‚¹
  void PrintNode() {
-        cout << "dataÊÇ: " << data << endl;
+        cout << "dataæ˜¯: " << data << endl;
     }
 };
 
 
 
 int main(){
-Linknode node1(10);//¹¹Ôì
-//Êä³ö 
+Linknode node1(10);//æž„é€ 
+//è¾“å‡º 
 node1.GetData() 
  
 
 
 }
-
