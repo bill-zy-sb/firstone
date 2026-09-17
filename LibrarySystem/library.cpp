@@ -1,4 +1,9 @@
 // ============================================================
+//此代码作为ai 给予的参考
+
+
+
+
 // 终端版图书管理系统（C++ 单文件版）
 // 对标 Java 结构：Book=实体类  Library=Service层  main=Controller
 // 编译：g++ -std=c++17 library.cpp -o library.exe
