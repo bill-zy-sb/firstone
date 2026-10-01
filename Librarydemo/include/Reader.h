@@ -8,7 +8,7 @@ private:
     std::string name;//借出人
     std::string identity;//借出人身份
     int id;//借出学号
-    std::vector<std::string> borrowedBooks;//借出的书籍列表
+    std::vector<Book*> borrowedBooks;//借出的书籍列表,这里包含另一个类是组合关系
 
 public:
     //带参构造

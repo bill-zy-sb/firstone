@@ -5,14 +5,11 @@ class LibraryManager{
   
   public:
     LibraryManager();
-    void showmenu();
-    void AddData();
-
-public:
-    // Other public members and methods
-    
-
-
+    void ShowMenu(void);
+    void AddData(void);
+    void ShowBooks(void);
+    void AddBook(void);
+    void DeleteBook(void);
 };
 
 #endif // LIBRARYMANAGER_H
