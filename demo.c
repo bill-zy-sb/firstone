@@ -1,45 +1,51 @@
-#include<iostream>
-using namespace std ;
-class Linknode {
-private:
-    int data;
-    Linknode* next;
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+class Animal {
+protected:
+    string 
 public:
-    // 构造函数
-    Linknode(int value = 0) : data(value), next(nullptr) {
-        cout << "Linknode constructor called" << endl;//提示
-    }
+    Animal(string n) : name(n) {}
 
-    // 析构函数
-    ~Linknode() {
-        cout << "Linknode destructor called" << endl;//提示
-    }
+    virtual void speak() const = 0;
 
-    int GetData() {
-        return data;
+    virtual ~Animal() = default;
+};
+class Dog : public Animal {
+public:
+    Dog(string n) : Animal(n) {}
+    void speak() const override {         
+        cout << name << ": 汪汪汪！\n";
     }
-
-    Linknode* GetNext() {
-        return next;
+};
+class Cat : public Animal {
+public:
+    Cat(string n) : Animal(n) {}
+    void speak() const override {
+        cout << name << ": 喵喵喵~\n";
     }
-
-    void SetNext(Linknode* ptr) {
-        next = ptr;
-    }
-//打印节点
- void PrintNode() {
-        cout << "data是: " << data << endl;
+};
+class Sheep : public Animal {
+public:
+    Sheep(string n) : Animal(n) {}
+    void speak() const override {
+        cout << name << ": 咩——\n";
     }
 };
 
-
-
-int main(){
-Linknode node1(10);//构造
-//输出 
-node1.GetData() 
- 
-
-
+int main() {
+    vector<Animal*> zoo;
+    zoo.push_back(new Dog("旺财"));
+    zoo.push_back(new Cat("咪咪"));
+    zoo.push_back(new Sheep("朵朵"));
+    zoo.push_back(new Dog("来福"));
+   
+    for (Animal* a : zoo) {
+        a->speak();                       
+    }
+//最后清理空间 
+    for (Animal* a : zoo) delete a;
+    return 0;
 }
 

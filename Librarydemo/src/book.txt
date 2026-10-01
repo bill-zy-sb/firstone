@@ -1,0 +1,8 @@
+std::string isbn;//图书编号
+    std::string title;
+    std::string author;
+    int total;//图书总数量
+    int available;//当前图书可借数量
+//图书类型|图书编号|图书名字|图书作者|图书总数量|图书可借
+Magazine|1|小曾健的秘密|曾贱的father|5|5
+

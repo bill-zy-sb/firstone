@@ -196,31 +196,31 @@ int main() {
         showMenu();
         int choice = readInt("请选择: ");
         switch (choice) {
-            case 1: handleAdd(lib); break;
-            case 2: lib.listAll(); break;
-            case 3: {
+            case 1: handleAdd(lib); break;// 添加图书
+            case 2: lib.listAll(); break;// 显示全部
+            case 3: {// 按 ISBN 查找
                 Book* b = lib.findByIsbn(readLine("ISBN: "));
                 if (b) { std::cout << "找到："; lib.listAll(); }
                 else     std::cout << "未找到该图书\n";
                 break;
             }
-            case 4: {
+            case 4: {// 按书名模糊查找
                 auto found = lib.findByTitle(readLine("书名关键字: "));
                 if (found.empty()) { std::cout << "未找到相关图书\n"; break; }
                 std::cout << "共找到 " << found.size() << " 本：\n";
                 for (const auto* b : found) std::cout << "  " << b->isbn << " 《" << b->title << "》 可借 " << b->available << '\n';
                 break;
             }
-            case 5:
+            case 5:// 借书
                 std::cout << (lib.borrowBook(readLine("ISBN: ")) ? "借书成功\n" : "借书失败（不存在或已借完）\n");
                 break;
-            case 6:
+            case 6:// 还书
                 std::cout << (lib.giveBackBook(readLine("ISBN: ")) ? "还书成功\n" : "还书失败（不存在或超出总量）\n");
                 break;
-            case 7:
+            case 7:// 删除图书
                 std::cout << (lib.removeBook(readLine("ISBN: ")) ? "删除成功\n" : "未找到该图书\n");
                 break;
-            case 0:
+            case 0:// 保存并退出
                 lib.saveToFile("books.txt");    // 退出前持久化
                 std::cout << "数据已保存，再见！\n";
                 return 0;
