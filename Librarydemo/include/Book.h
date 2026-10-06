@@ -21,8 +21,11 @@ protected:
     std::string getAuthor()const;
     int getTotal()const;
     int getAvailable()const;
-//显示函数
+//显示函数,声明类型的虚函数
     virtual void showinfo() const;
+    virtual std::string getType() const = 0; //纯虚函数，获取图书类型
+
+
 //构造,析构函数声明
      Book();
      Book(int total, int available, const std::string& isbn, const std::string& title, const std::string& author);
@@ -32,6 +35,7 @@ class Magazine: public Book {
 public:
     Magazine(int total, int available, const std::string& isbn, const std::string& title, const std::string& author);
     void showinfo() const override;//虚函数重写
+    std::string getType() const override;//获取图书类型
     //析构函数
     ~Magazine();
 
@@ -40,6 +44,7 @@ class Novel: public Book {
 public:
     Novel(int total, int available, const std::string& isbn, const std::string& title, const std::string& author);
     void showinfo() const override;//虚函数重写
+    std::string getType() const override;//获取图书类型
     //析构函数
     ~Novel();
 };
@@ -47,6 +52,7 @@ class Science: public Book {
 public:
     Science(int total, int available, const std::string& isbn, const std::string& title, const std::string& author);
     void showinfo() const override;//虚函数重写
+    std::string getType() const override;//获取图书类型
     //析构函数
     ~Science();
 };

@@ -10,6 +10,10 @@ class LibraryManager{
     void ShowBooks(void);
     void AddBook(void);
     void DeleteBook(void);
+    void ModifyBook(void);
+    void FindBook(void);
+    void BorrowBook(void);
+    void ReturnBook(void);
 };
 
 #endif // LIBRARYMANAGER_H

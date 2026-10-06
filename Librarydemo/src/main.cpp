@@ -15,31 +15,45 @@ LibraryManager lm;
 lm.AddData();
     while(1){
     //显示菜单
-    lm.showmenu();
-
-
-
+    lm.ShowMenu();
 int choice;
     cin >> choice;
     switch (choice)
     {
-    
-
-        
-//添加图书，把图书数据保存在book.txt中
-//删除图书
-//修改图书信息
-//输入编号查找图书
-//借书功能
-//还书功能，对Reader类进行扩展，增加借书和还书功能
-//打印
-//退出功能
-
-    case constant expression:
-        /* code */
+    case 1:
+        //显示图书
+        lm.ShowBooks();
         break;
-    
+    case 2:
+        //添加图书
+        lm.AddBook();
+        break;
+    case 3:
+        //删除图书
+        lm.DeleteBook();
+        break;
+    case 4:
+        //修改图书信息
+        lm.ModifyBook();//不同类之间的函数调用是属于依赖关系
+        break;
+    case 5:
+        //输入编号查找图书
+        lm.FindBook();
+        break;
+    case 6:
+        //借书功能
+        lm.BorrowBook();
+        break;
+    case 7:
+        //还书功能，对Reader类进行扩展，增加借书和还书功能
+        lm.ReturnBook();
+        break;
+    case 0:
+        //退出功能
+        cout << "感谢使用图书管理系统！" << endl;
+        return 0;
     default:
+        cout << "无效选择，请重新输入！" << endl;
         break;
     }
 

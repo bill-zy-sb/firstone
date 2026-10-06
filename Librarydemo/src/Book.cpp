@@ -1,5 +1,6 @@
 #include<string>
 #include<iostream>
+using namespace std;
 #include "Book.h"
 
 //Book
@@ -20,8 +21,8 @@
    Book:: Book(int total, int available, const std::string& isbn, const std::string& title, const std::string& author)
     : total(total), available(available), isbn(isbn), title(title), author(author) {} 
    Book::~Book() = default;
-    //显示函数
-    void Book::showinfo()const{ }
+    //显示函数,显示一行
+    void Book::showinfo()const{cout<<"ISBN:"<<isbn<<"  标题:"<<title<<"  作者:"<<author<<"  总数:"<<total<<"  可借数:"<<available<<std::endl;}
 
 //Magazine,Novel,Science
     Magazine::Magazine(int total, int available, const std::string& isbn, const std::string& title, const std::string& author)
@@ -33,6 +34,9 @@
         std::cout << "作者: " << getAuthor() << std::endl;
         std::cout << "总数: " << getTotal() << std::endl;
         std::cout << "可借数: " << getAvailable() << std::endl;
+    }
+    std::string Magazine::getType() const {
+        return "Magazine";
     }
     Magazine::~Magazine() {}
 
@@ -47,7 +51,10 @@
         std::cout << "可借数: " << getAvailable() << std::endl;
 
     }
-   Novel::~Novel() {}
+    std::string Novel::getType() const {
+        return "Novel";
+    }
+    Novel::~Novel() {}
 
     Science::Science(int total, int available, const std::string& isbn, const std::string& title, const std::string& author)
     :Book(total, available, isbn, title, author) {}
@@ -58,5 +65,8 @@
         std::cout << "作者: " << getAuthor() << std::endl;
         std::cout << "总数: " << getTotal() << std::endl;
         std::cout << "可借数: " << getAvailable() << std::endl;
+     }
+     std::string Science::getType() const {
+        return "Science";
      }
      Science::~Science() {}

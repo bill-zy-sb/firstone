@@ -24,7 +24,8 @@ void Reader::showBorrowedBooks() const {
     } else {
         cout << name << "（学号：" << id << "）借出的图书列表：\n";
         for (const auto& book : borrowedBooks) {
-            cout << "- " << book << '\n';
+            cout << "- "; 
+            book->showinfo(); // 调用 Book 类的 showinfo() 方法显示图书信息自带换行
         }
     }
 }
